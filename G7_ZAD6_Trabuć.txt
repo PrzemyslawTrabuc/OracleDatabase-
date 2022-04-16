@@ -1,0 +1,701 @@
+﻿-- *******************************************************************************
+-- *                                         *                                  
+-- *       BAZY DANYCH II - PROJEKT 		 * 	 GRUPA: 7		               
+-- *                                         *                                  
+-- *******************************************************************************
+-- * 																		     
+-- *   Nazwisko i imię: Przemysław Trabuć                                                         
+-- * 																		     
+-- *******************************************************************************
+-- * 																		     
+-- *   Nr indeksu: 95574                                                              
+-- * 																		     
+-- *******************************************************************************
+-- *******************************************************************************
+-- * 																		     
+-- *   Temat projektu:  Serwis telefonów komórkowych                                                             
+-- * 																		     
+-- *******************************************************************************
+CREATE TABLE akcesoria (
+    nazwa            VARCHAR2(50 CHAR),
+    producent        VARCHAR2(30 CHAR),
+    marka_docelowa   VARCHAR2(30 CHAR),
+    cena             NUMBER(7, 2),
+    stan             VARCHAR2(15 CHAR),
+    ilosc_sztuk      NUMBER(3),
+    opis             VARCHAR2(300 CHAR),
+    kategoria        VARCHAR2(30 CHAR),
+    akcesoria_id     NUMBER NOT NULL
+);
+
+ALTER TABLE akcesoria ADD CONSTRAINT akcesoria_pk PRIMARY KEY ( akcesoria_id );
+
+CREATE TABLE akcesoria_zlecenia (
+    akcesoria_akcesoria_id   NUMBER NOT NULL,
+    zlecenia_zlecenia_id     NUMBER NOT NULL
+);
+
+CREATE TABLE klienci (
+    imie          VARCHAR2(30 CHAR),
+    nazwisko      VARCHAR2(40 CHAR),
+    nr_telefonu   VARCHAR2(12 CHAR),
+    klienci_id    NUMBER NOT NULL
+);
+
+ALTER TABLE klienci ADD CONSTRAINT klienci_pk PRIMARY KEY ( klienci_id );
+
+CREATE TABLE pracownicy (
+    imie            VARCHAR2(30 CHAR),
+    nazwisko        VARCHAR2(40 CHAR),
+    wynagrodzenie   NUMBER(7, 2),
+    nr_telefonu     VARCHAR2(12 CHAR),
+    pesel           CHAR(11 CHAR),
+    ulica           VARCHAR2(40 CHAR),
+    kod_pocztowy    VARCHAR2(10 CHAR),
+    nr_konta        VARCHAR2(28 CHAR),
+    pracownicy_id   NUMBER NOT NULL
+);
+
+ALTER TABLE pracownicy ADD CONSTRAINT pracownicy_pk PRIMARY KEY ( pracownicy_id );
+
+CREATE TABLE pracownicy_zlecenia (
+    zlecenia_zlecenia_id       NUMBER NOT NULL,
+    pracownicy_pracownicy_id   NUMBER NOT NULL
+);
+
+CREATE TABLE specjalizacje (
+    nazwa              VARCHAR2(30 CHAR),
+    specjalizacje_id   NUMBER NOT NULL
+);
+
+ALTER TABLE specjalizacje ADD CONSTRAINT specjalizacje_pk PRIMARY KEY ( specjalizacje_id );
+
+CREATE TABLE specjalizacje_pracownicy (
+    specjalizacje_specjalizacje_id   NUMBER NOT NULL,
+    pracownicy_pracownicy_id         NUMBER NOT NULL
+);
+
+CREATE TABLE uslugi (
+    nazwa       VARCHAR2(50 CHAR),
+    cena        NUMBER(7, 2),
+    uslugi_id   NUMBER NOT NULL
+);
+
+ALTER TABLE uslugi ADD CONSTRAINT uslugi_pk PRIMARY KEY ( uslugi_id );
+
+CREATE TABLE uslugi_zlecenia (
+    uslugi_uslugi_id       NUMBER NOT NULL,
+    zlecenia_zlecenia_id   NUMBER NOT NULL
+);
+
+CREATE TABLE zlecenia (
+    opis                 VARCHAR2(300 CHAR),
+    data_przyjecia       DATE,
+    data_zakonczenia     DATE,
+    zakonczono           CHAR(1),
+    zlecenia_id          NUMBER NOT NULL,
+    klienci_klienci_id   NUMBER NOT NULL
+);
+
+ALTER TABLE zlecenia ADD CONSTRAINT zlecenia_pk PRIMARY KEY ( zlecenia_id );
+
+ALTER TABLE akcesoria_zlecenia
+    ADD CONSTRAINT "akc-zlec_AKCESORIA_FK" FOREIGN KEY ( akcesoria_akcesoria_id )
+        REFERENCES akcesoria ( akcesoria_id );
+
+ALTER TABLE akcesoria_zlecenia
+    ADD CONSTRAINT "akc-zlec_ZLECENIA_FK" FOREIGN KEY ( zlecenia_zlecenia_id )
+        REFERENCES zlecenia ( zlecenia_id );
+
+ALTER TABLE pracownicy_zlecenia
+    ADD CONSTRAINT "prac-zlec_PRACOWNICY_FK" FOREIGN KEY ( pracownicy_pracownicy_id )
+        REFERENCES pracownicy ( pracownicy_id );
+
+ALTER TABLE pracownicy_zlecenia
+    ADD CONSTRAINT "prac-zlec_ZLECENIA_FK" FOREIGN KEY ( zlecenia_zlecenia_id )
+        REFERENCES zlecenia ( zlecenia_id );
+
+ALTER TABLE specjalizacje_pracownicy
+    ADD CONSTRAINT "spec-prac_PRACOWNICY_FK" FOREIGN KEY ( pracownicy_pracownicy_id )
+        REFERENCES pracownicy ( pracownicy_id );
+
+ALTER TABLE specjalizacje_pracownicy
+    ADD CONSTRAINT "spec-prac_Specjalizacje_FK" FOREIGN KEY ( specjalizacje_specjalizacje_id )
+        REFERENCES specjalizacje ( specjalizacje_id );
+
+ALTER TABLE uslugi_zlecenia
+    ADD CONSTRAINT "uslugi-zlecenia_USLUGI_FK" FOREIGN KEY ( uslugi_uslugi_id )
+        REFERENCES uslugi ( uslugi_id );
+
+ALTER TABLE uslugi_zlecenia
+    ADD CONSTRAINT "uslugi-zlecenia_ZLECENIA_FK" FOREIGN KEY ( zlecenia_zlecenia_id )
+        REFERENCES zlecenia ( zlecenia_id );
+
+ALTER TABLE zlecenia
+    ADD CONSTRAINT zlecenia_klienci_fk FOREIGN KEY ( klienci_klienci_id )
+        REFERENCES klienci ( klienci_id );
+
+CREATE OR REPLACE TRIGGER fkntm_zlecenia BEFORE
+    UPDATE OF klienci_klienci_id ON zlecenia
+BEGIN
+    raise_application_error(-20225, 'Non Transferable FK constraint  on table ZLECENIA is violated');
+END;
+/
+
+CREATE SEQUENCE akcesoria_akcesoria_id_seq START WITH 1 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER akcesoria_akcesoria_id_trg BEFORE
+    INSERT ON akcesoria
+    FOR EACH ROW
+    WHEN ( new.akcesoria_id IS NULL )
+BEGIN
+    :new.akcesoria_id := akcesoria_akcesoria_id_seq.nextval;
+END;
+/
+
+CREATE SEQUENCE klienci_klienci_id_seq START WITH 1 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER klienci_klienci_id_trg BEFORE
+    INSERT ON klienci
+    FOR EACH ROW
+    WHEN ( new.klienci_id IS NULL )
+BEGIN
+    :new.klienci_id := klienci_klienci_id_seq.nextval;
+END;
+/
+
+CREATE SEQUENCE pracownicy_pracownicy_id_seq START WITH 1 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER pracownicy_pracownicy_id_trg BEFORE
+    INSERT ON pracownicy
+    FOR EACH ROW
+    WHEN ( new.pracownicy_id IS NULL )
+BEGIN
+    :new.pracownicy_id := pracownicy_pracownicy_id_seq.nextval;
+END;
+/
+
+CREATE SEQUENCE specjalizacje_specjalizacje_id START WITH 1 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER specjalizacje_specjalizacje_id BEFORE
+    INSERT ON specjalizacje
+    FOR EACH ROW
+    WHEN ( new.specjalizacje_id IS NULL )
+BEGIN
+    :new.specjalizacje_id := specjalizacje_specjalizacje_id.nextval;
+END;
+/
+
+CREATE SEQUENCE uslugi_uslugi_id_seq START WITH 1 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER uslugi_uslugi_id_trg BEFORE
+    INSERT ON uslugi
+    FOR EACH ROW
+    WHEN ( new.uslugi_id IS NULL )
+BEGIN
+    :new.uslugi_id := uslugi_uslugi_id_seq.nextval;
+END;
+/
+
+CREATE SEQUENCE zlecenia_zlecenia_id_seq START WITH 1 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER zlecenia_zlecenia_id_trg BEFORE
+    INSERT ON zlecenia
+    FOR EACH ROW
+    WHEN ( new.zlecenia_id IS NULL )
+BEGIN
+    :new.zlecenia_id := zlecenia_zlecenia_id_seq.nextval;
+END;
+/
+
+-- -------------------------------------------------------------------------------
+-- POLECENIA:   5 X INSERT  DO WSZYSTKICH TABEL                                               
+-- -------------------------------------------------------------------------------
+
+INSERT INTO akcesoria VALUES (
+    'Ekran Samsung S10',
+    'SAMSUNG',
+    'SAMSUNG',
+    1000,
+    'NOWY',
+    5,
+    'Ekran do galaxy s10',
+    'Ekran',
+    1
+);
+
+INSERT INTO akcesoria VALUES (
+    'Ekran Samsung S9',
+    'SAMSUNG',
+    'SAMSUNG.corp',
+    600,
+    'NOWY',
+    2,
+    'Ekran do galaxy s9',
+    'Ekran',
+    2
+);
+
+INSERT INTO akcesoria VALUES (
+    'Modul WiFi Xiaomi Redmi3',
+    'Xiaomi',
+    'LG',
+    200,
+    'NOWY',
+    10,
+    'Modul WiFi Xioami Redmi3',
+    'Modul-WiFi',
+    3
+);
+
+INSERT INTO akcesoria VALUES (
+    'Ekran Samsung S10+',
+    'SAMSUNG',
+    'SAMSUNG',
+    1500,
+    'NOWY',
+    1,
+    'Ekran do galaxy s10+',
+    'Ekran',
+    4
+);
+
+INSERT INTO akcesoria VALUES (
+    'Modul GPS LG G7',
+    'LG',
+    'INTEL',
+    400,
+    'NOWY',
+    3,
+    'Modul GPS do LG G7',
+    'Modul-GPS',
+    5
+);
+
+INSERT INTO uslugi VALUES (
+    'Wymiana ekranu',
+    300,
+    1
+);
+
+INSERT INTO uslugi VALUES (
+    'Aktualizacja softu',
+    100,
+    2
+);
+
+INSERT INTO uslugi VALUES (
+    'Wymiana modulu',
+    200,
+    3
+);
+
+INSERT INTO uslugi VALUES (
+    'Naprawa po zalazniu',
+    500,
+    4
+);
+
+INSERT INTO uslugi VALUES (
+    'Czyszczenie',
+    200,
+    5
+);
+
+INSERT INTO klienci VALUES (
+    'Bob',
+    'Budowniczy',
+    '00094234',
+    1
+);
+
+INSERT INTO klienci VALUES (
+    'Adam',
+    'Janusz',
+    '467892712',
+    2
+);
+
+INSERT INTO klienci VALUES (
+    'Gieniek',
+    'Kowal',
+    '905362432',
+    3
+);
+
+INSERT INTO klienci VALUES (
+    'Robert',
+    'Mroz',
+    '12312415',
+    4
+);
+
+INSERT INTO klienci VALUES (
+    'Rafal',
+    'Nowak',
+    '235135463',
+    5
+);
+
+INSERT INTO zlecenia VALUES (
+    'Wymiana ekranu S10',
+    TO_DATE('12-05-2019', 'DD-MM-YYYY'),
+    TO_DATE('12-05-2019', 'DD-MM-YYYY'),
+    1,
+    1,
+    1
+);
+
+INSERT INTO zlecenia VALUES (
+    'Wymiana ekranu S9',
+    TO_DATE('12-05-2019', 'DD-MM-YYYY'),
+    TO_DATE('12-05-2019', 'DD-MM-YYYY'),
+    1,
+    2,
+    2
+);
+
+INSERT INTO zlecenia VALUES (
+    'Wymiana Wifi redmi3',
+    TO_DATE('14-05-2019', 'DD-MM-YYYY'),
+    TO_DATE('14-05-2019', 'DD-MM-YYYY'),
+    0,
+    3,
+    3
+);
+
+INSERT INTO zlecenia VALUES (
+    'Wymiana ekranu S10+',
+    TO_DATE('14-05-2019', 'DD-MM-YYYY'),
+    TO_DATE('14-05-2019', 'DD-MM-YYYY'),
+    1,
+    4,
+    4
+);
+
+INSERT INTO zlecenia VALUES (
+    'Wymiana GPS G7',
+    TO_DATE('15-05-2019', 'DD-MM-YYYY'),
+    TO_DATE('15-05-2019', 'DD-MM-YYYY'),
+    0,
+    5,
+    5
+);
+
+INSERT INTO pracownicy VALUES (
+    'Adam',
+    'Drewno',
+    2500,
+    '1221532',
+    '11111111111',
+    'Makowa',
+    '45-210',
+    '1231241235122325',
+    1
+);
+
+INSERT INTO pracownicy VALUES (
+    'Karol',
+    'Karas',
+    2200,
+    '345435',
+    '22222222222',
+    'Bakowa',
+    '45-215',
+    '456456456455474',
+    2
+);
+
+INSERT INTO pracownicy VALUES (
+    'Damian',
+    'Jachas',
+    2300,
+    '3464363',
+    '3333333333',
+    'LDOMOD',
+    '45-213',
+    '3463434643',
+    3
+);
+
+INSERT INTO pracownicy VALUES (
+    'Janusz',
+    'Paleta',
+    2400,
+    '34634634643',
+    '44444444444',
+    'Zielona',
+    '45-212',
+    '67876876876',
+    4
+);
+
+INSERT INTO pracownicy VALUES (
+    'Domino',
+    'Lecina',
+    2500,
+    '34634634643',
+    '555555555',
+    'Dluga',
+    '45-211',
+    '678768678',
+    5
+);
+
+INSERT INTO specjalizacje VALUES (
+    'Hardware',
+    1
+);
+
+INSERT INTO specjalizacje VALUES (
+    'Software',
+    2
+);
+
+INSERT INTO specjalizacje VALUES (
+    'Update',
+    3
+);
+
+INSERT INTO specjalizacje VALUES (
+    'Downgrade',
+    4
+);
+
+INSERT INTO specjalizacje VALUES (
+    'OC',
+    5
+);
+
+INSERT INTO akcesoria_zlecenia VALUES (
+    1,
+    1
+);
+
+INSERT INTO akcesoria_zlecenia VALUES (
+    2,
+    2
+);
+
+INSERT INTO akcesoria_zlecenia VALUES (
+    3,
+    3
+);
+
+INSERT INTO akcesoria_zlecenia VALUES (
+    4,
+    4
+);
+
+INSERT INTO akcesoria_zlecenia VALUES (
+    5,
+    5
+);
+
+INSERT INTO pracownicy_zlecenia VALUES (
+    1,
+    1
+);
+
+INSERT INTO pracownicy_zlecenia VALUES (
+    2,
+    2
+);
+
+INSERT INTO pracownicy_zlecenia VALUES (
+    3,
+    3
+);
+
+INSERT INTO pracownicy_zlecenia VALUES (
+    4,
+    4
+);
+
+INSERT INTO pracownicy_zlecenia VALUES (
+    5,
+    5
+);
+
+INSERT INTO specjalizacje_pracownicy VALUES (
+    1,
+    1
+);
+
+INSERT INTO specjalizacje_pracownicy VALUES (
+    2,
+    2
+);
+
+INSERT INTO specjalizacje_pracownicy VALUES (
+    3,
+    3
+);
+
+INSERT INTO specjalizacje_pracownicy VALUES (
+    4,
+    4
+);
+
+INSERT INTO specjalizacje_pracownicy VALUES (
+    5,
+    5
+);
+
+INSERT INTO uslugi_zlecenia VALUES (
+    1,
+    1
+);
+
+INSERT INTO uslugi_zlecenia VALUES (
+    2,
+    2
+);
+
+INSERT INTO uslugi_zlecenia VALUES (
+    3,
+    3
+);
+
+INSERT INTO uslugi_zlecenia VALUES (
+    4,
+    4
+);
+
+INSERT INTO uslugi_zlecenia VALUES (
+    5,
+    5
+);
+
+INSERT INTO pracownicy VALUES (
+    'Karol',
+    'Karas',
+    2200,
+    '345435',
+    '22222222222',
+    'Bakowa',
+    '45-215',
+    '456456456455474',
+    7
+);
+
+-- *******************************************************************************
+-- 								PROCEDURA NR 1                                            
+-- *******************************************************************************
+
+-- -------------------------------------------------------------------------------
+-- UTWORZENIE PROCEDURY                                             
+-- -------------------------------------------------------------------------------
+
+
+CREATE PROCEDURE proc1 (pracownicy_id NUMBER) AS
+   tot_prac NUMBER;
+   BEGIN
+      DELETE FROM pracownicy
+      WHERE pracownicy.pracownicy_id = proc1.pracownicy_id;
+   tot_prac := tot_prac - 1;
+   END;
+/
+
+
+-- -------------------------------------------------------------------------------
+-- PRZYKŁAD POLECENIA, KTÓRE PRZETESTUJE PROCEDURĘ                                              
+-- -------------------------------------------------------------------------------
+
+
+EXECUTE proc1(7);
+
+-- -------------------------------------------------------------------------------
+-- USUNIĘCIE PROCEDURY                                             
+-- -------------------------------------------------------------------------------
+
+
+DROP PROCEDURE proc1;
+
+
+-- *******************************************************************************
+-- 								PROCEDURA NR 2                                            
+-- *******************************************************************************
+INSERT INTO pracownicy VALUES (
+    'Karol',
+    'Karas',
+    2200,
+    '345435',
+    '22222222222',
+    'Bakowa',
+    '45-215',
+    '456456456455474',
+    7
+);
+-- -------------------------------------------------------------------------------
+-- UTWORZENIE PROCEDURY                                             
+-- -------------------------------------------------------------------------------
+
+CREATE PROCEDURE proc2 (suma NUMBER)
+  IS
+   BEGIN
+      UPDATE pracownicy SET wynagrodzenie = wynagrodzenie+suma;
+      END;
+/     
+
+
+-- -------------------------------------------------------------------------------
+-- PRZYKŁAD POLECENIA, KTÓRE PRZETESTUJE PROCEDURĘ                                              
+-- -------------------------------------------------------------------------------
+
+
+EXECUTE proc2(77);
+
+
+-- -------------------------------------------------------------------------------
+-- USUNIĘCIE PROCEDURY                                             
+-- -------------------------------------------------------------------------------
+
+
+DROP PROCEDURE proc2;
+
+
+
+
+-- *******************************************************************************
+-- 								PROCEDURA NR 3                                            
+-- *******************************************************************************
+
+-- -------------------------------------------------------------------------------
+-- UTWORZENIE PROCEDURY                                             
+-- -------------------------------------------------------------------------------
+
+
+CREATE PROCEDURE proc3
+  IS
+   BEGIN
+      UPDATE zlecenia SET data_zakonczenia = sysdate
+      WHERE zlecenia.zakonczono =1;
+      END;
+/     
+
+
+-- -------------------------------------------------------------------------------
+-- PRZYKŁAD POLECENIA, KTÓRE PRZETESTUJE PROCEDURĘ                                              
+-- -------------------------------------------------------------------------------
+
+
+EXECUTE proc3;
+
+-- -------------------------------------------------------------------------------
+-- USUNIĘCIE PROCEDURY                                             
+-- -------------------------------------------------------------------------------
+
+DROP PROCEDURE proc3;
+
+
+DROP TABLE akcesoria CASCADE CONSTRAINTS;
+DROP TABLE klienci CASCADE CONSTRAINTS;
+DROP TABLE akcesoria_zlecenia CASCADE CONSTRAINTS;
+DROP TABLE pracownicy CASCADE CONSTRAINTS;
+DROP TABLE pracownicy_zlecenia CASCADE CONSTRAINTS;
+DROP TABLE specjalizacje CASCADE CONSTRAINTS;
+DROP TABLE specjalizacje_pracownicy CASCADE CONSTRAINTS;
+DROP TABLE uslugi CASCADE CONSTRAINTS;
+DROP TABLE uslugi_zlecenia CASCADE CONSTRAINTS;
+DROP TABLE zlecenia CASCADE CONSTRAINTS;

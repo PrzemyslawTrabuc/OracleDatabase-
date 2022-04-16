@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5C14CA79-2A82-403D-0068-A5B2C0F20DB5" name="KATEGORIA_AKCESORIUM">
+<createdBy>czeme</createdBy>
+<createdTime>2021-03-08 10:38:42 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<ordsAlias>table_11</ordsAlias>
+<typeID>2</typeID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Nazwa" id="9935DCE5-9DA3-133B-065D-7C79B63F0662">
+<createdBy>czeme</createdBy>
+<createdTime>2021-03-08 10:40:09 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="KATEGORIA_AKCESORIUM_ID" id="C0F20C1C-1572-23F1-9A58-7510C0EE56F2">
+<createdBy>czeme</createdBy>
+<createdTime>2021-03-08 10:41:46 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5AF7317F-54A1-3AC8-077A-EF3A5E9E9906" name="KATEGORIA_AKCESORIUM_PK">
+<createdBy>czeme</createdBy>
+<createdTime>2021-03-08 10:40:09 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0F20C1C-1572-23F1-9A58-7510C0EE56F2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

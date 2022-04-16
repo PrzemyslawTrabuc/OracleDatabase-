@@ -1,0 +1,664 @@
+-- *******************************************************************************
+-- *                                         *                                  
+-- *       BAZY DANYCH II - PROJEKT 		 * 	 GRUPA: 7 		               
+-- *                                         *                                  
+-- *******************************************************************************
+-- * 																		     
+-- *   Nazwisko i imiê: TRABUÆ PRZEMYS£AW                                               
+-- * 																		     
+-- *******************************************************************************
+-- * 																		     
+-- *   Nr indeksu: 95574                                                               
+-- * 																		     
+-- *******************************************************************************
+-- *******************************************************************************
+-- * 																		     
+-- *   Temat projektu: SERWIS TELEFONÓW KOMÓRKOWYCH                                                   
+-- * 																		     
+-- *******************************************************************************
+
+
+
+
+-- -------------------------------------------------------------------------------
+-- TWORZENIE STRUKTURY BAZY DANYCH                                            
+-- -------------------------------------------------------------------------------
+
+CREATE TABLE akcesoria (
+    nazwa            VARCHAR(50),
+    producent        VARCHAR(30),
+    marka_docelowa   VARCHAR(30),
+    cena             DECIMAL(7, 2),
+    stan             VARCHAR(15),
+    ilosc_sztuk      SMALLINT,
+    opis             VARCHAR(300),
+    kategoria        VARCHAR(30),
+    akcesoria_id     FLOAT NOT NULL
+);
+
+ALTER TABLE akcesoria ADD CONSTRAINT akcesoria_pk PRIMARY KEY ( akcesoria_id );
+
+CREATE TABLE akcesoria_zlecenia (
+    akcesoria_akcesoria_id   FLOAT NOT NULL,
+    zlecenia_zlecenia_id     FLOAT NOT NULL
+);
+
+CREATE TABLE klienci (
+    imie          VARCHAR(30),
+    nazwisko      VARCHAR(40),
+    nr_telefonu   VARCHAR(12),
+    klienci_id    FLOAT NOT NULL
+);
+
+ALTER TABLE klienci ADD CONSTRAINT klienci_pk PRIMARY KEY ( klienci_id );
+
+CREATE TABLE pracownicy (
+    imie            VARCHAR(30),
+    nazwisko        VARCHAR(40),
+    wynagrodzenie   DECIMAL(7, 2),
+    nr_telefonu     VARCHAR(12),
+    pesel           CHAR(11),
+    ulica           VARCHAR(40),
+    kod_pocztowy    VARCHAR(10),
+    nr_konta        VARCHAR(28),
+    pracownicy_id   FLOAT NOT NULL
+);
+
+ALTER TABLE pracownicy ADD CONSTRAINT pracownicy_pk PRIMARY KEY ( pracownicy_id );
+
+CREATE TABLE pracownicy_zlecenia (
+    zlecenia_zlecenia_id       FLOAT NOT NULL,
+    pracownicy_pracownicy_id   FLOAT NOT NULL
+);
+
+CREATE TABLE specjalizacje (
+    nazwa              VARCHAR(30),
+    specjalizacje_id   FLOAT NOT NULL
+);
+
+ALTER TABLE specjalizacje ADD CONSTRAINT specjalizacje_pk PRIMARY KEY ( specjalizacje_id );
+
+CREATE TABLE specjalizacje_pracownicy (
+    specjalizacje_specjalizacje_id   FLOAT NOT NULL,
+    pracownicy_pracownicy_id         FLOAT NOT NULL
+);
+
+CREATE TABLE uslugi (
+    nazwa       VARCHAR(50),
+    cena        DECIMAL(7, 2),
+    uslugi_id   FLOAT NOT NULL
+);
+
+ALTER TABLE uslugi ADD CONSTRAINT uslugi_pk PRIMARY KEY ( uslugi_id );
+
+CREATE TABLE uslugi_zlecenia (
+    uslugi_uslugi_id       FLOAT NOT NULL,
+    zlecenia_zlecenia_id   FLOAT NOT NULL
+);
+
+CREATE TABLE zlecenia (
+    opis                 VARCHAR(300),
+    data_przyjecia       DATETIME,
+    data_zakonczenia     DATETIME,
+    zakonczono           CHAR(1),
+    zlecenia_id          FLOAT NOT NULL,
+    klienci_klienci_id   FLOAT NOT NULL
+);
+
+ALTER TABLE zlecenia ADD CONSTRAINT zlecenia_pk PRIMARY KEY ( zlecenia_id );
+
+ALTER TABLE akcesoria_zlecenia
+    ADD CONSTRAINT "akc-zlec_AKCESORIA_FK" FOREIGN KEY ( akcesoria_akcesoria_id )
+        REFERENCES akcesoria ( akcesoria_id );
+
+ALTER TABLE akcesoria_zlecenia
+    ADD CONSTRAINT "akc-zlec_ZLECENIA_FK" FOREIGN KEY ( zlecenia_zlecenia_id )
+        REFERENCES zlecenia ( zlecenia_id );
+
+ALTER TABLE pracownicy_zlecenia
+    ADD CONSTRAINT "prac-zlec_PRACOWNICY_FK" FOREIGN KEY ( pracownicy_pracownicy_id )
+        REFERENCES pracownicy ( pracownicy_id );
+
+ALTER TABLE pracownicy_zlecenia
+    ADD CONSTRAINT "prac-zlec_ZLECENIA_FK" FOREIGN KEY ( zlecenia_zlecenia_id )
+        REFERENCES zlecenia ( zlecenia_id );
+
+ALTER TABLE specjalizacje_pracownicy
+    ADD CONSTRAINT "spec-prac_PRACOWNICY_FK" FOREIGN KEY ( pracownicy_pracownicy_id )
+        REFERENCES pracownicy ( pracownicy_id );
+
+ALTER TABLE specjalizacje_pracownicy
+    ADD CONSTRAINT "spec-prac_Specjalizacje_FK" FOREIGN KEY ( specjalizacje_specjalizacje_id )
+        REFERENCES specjalizacje ( specjalizacje_id );
+
+ALTER TABLE uslugi_zlecenia
+    ADD CONSTRAINT "uslugi-zlecenia_USLUGI_FK" FOREIGN KEY ( uslugi_uslugi_id )
+        REFERENCES uslugi ( uslugi_id );
+
+ALTER TABLE uslugi_zlecenia
+    ADD CONSTRAINT "uslugi-zlecenia_ZLECENIA_FK" FOREIGN KEY ( zlecenia_zlecenia_id )
+        REFERENCES zlecenia ( zlecenia_id );
+
+ALTER TABLE zlecenia
+    ADD CONSTRAINT zlecenia_klienci_fk FOREIGN KEY ( klienci_klienci_id )
+        REFERENCES klienci ( klienci_id );
+
+-- -------------------------------------------------------------------------------
+-- POLECENIA:   5 X INSERT  DO WSZYSTKICH TABEL                                               
+-- -------------------------------------------------------------------------------
+
+INSERT INTO akcesoria VALUES (
+    'Ekran Samsung S10',
+    'SAMSUNG',
+    'SAMSUNG',
+    1000,
+    'NOWY',
+    5,
+    'Ekran do galaxy s10',
+    'Ekran',
+    1
+);
+
+INSERT INTO akcesoria VALUES (
+    'Ekran Samsung S9',
+    'SAMSUNG',
+    'SAMSUNG.corp',
+    600,
+    'NOWY',
+    2,
+    'Ekran do galaxy s9',
+    'Ekran',
+    2
+);
+
+INSERT INTO akcesoria VALUES (
+    'Modul WiFi Xiaomi Redmi3',
+    'Xiaomi',
+    'LG',
+     200,
+    'NOWY',
+    10,
+    'Modul WiFi Xioami Redmi3',
+    'Modul-WiFi',
+    3
+);
+
+INSERT INTO akcesoria VALUES (
+    'Ekran Samsung S10+',
+    'SAMSUNG',
+    'SAMSUNG',
+    1500,
+    'NOWY',
+    1,
+    'Ekran do galaxy s10+',
+    'Ekran',
+    4
+);
+
+INSERT INTO akcesoria VALUES (
+    'Modul GPS LG G7',
+    'LG',
+    'INTEL',
+    400,
+    'NOWY',
+    3,
+    'Modul GPS do LG G7',
+    'Modul-GPS',
+    5
+);
+
+INSERT INTO uslugi VALUES (
+    'Wymiana ekranu',
+    300,
+    1
+);
+
+INSERT INTO uslugi VALUES (
+    'Aktualizacja softu',
+    100,
+    2
+);
+
+INSERT INTO uslugi VALUES (
+    'Wymiana modulu',
+    200,
+    3
+);
+
+INSERT INTO uslugi VALUES (
+    'Naprawa po zalazniu',
+    500,
+    4
+);
+
+INSERT INTO uslugi VALUES (
+    'Czyszczenie',
+    200,
+    5
+);
+
+INSERT INTO klienci VALUES (
+    'Bob',
+    'Budowniczy',
+    '00094234',
+    1
+);
+
+INSERT INTO klienci VALUES (
+    'Adam',
+    'Janusz',
+    '467892712',
+    2
+);
+
+INSERT INTO klienci VALUES (
+    'Gieniek',
+    'Kowal',
+    '905362432',
+    3
+);
+
+INSERT INTO klienci VALUES (
+    'Robert',
+    'Mroz',
+    '12312415',
+    4
+);
+
+INSERT INTO klienci VALUES (
+    'Rafal',
+    'Nowak',
+    '235135463',
+    5
+);
+
+INSERT INTO zlecenia VALUES (
+    'Wymiana ekranu S10',
+    CONVERT(DATETIME, '12-MAY-2019', 113),
+    CONVERT(DATETIME, '12-MAY-2019', 113),
+    1,
+    1,
+    1
+);
+
+INSERT INTO zlecenia VALUES (
+    'Wymiana ekranu S9',
+    CONVERT(DATETIME, '12-MAY-2019', 113),
+    CONVERT(DATETIME, '12-MAY-2019', 113),
+    2,
+    2,
+    2
+);
+
+INSERT INTO zlecenia VALUES (
+    'Wymiana Wifi redmi3',
+    CONVERT(DATETIME, '14-MAY-2019',113),
+    CONVERT(DATETIME, '14-MAY-2019', 113),
+    3,
+    3,
+    3
+);
+
+INSERT INTO zlecenia VALUES (
+    'Wymiana ekranu S10+',
+    CONVERT(DATETIME, '14-MAY-2019', 113),
+    CONVERT(DATETIME, '14-MAY-2019', 113),
+    4,
+    4,
+    4
+);
+
+INSERT INTO zlecenia VALUES (
+    'Wymiana GPS G7',
+    CONVERT(DATETIME, '15-MAY-2019', 113),
+    CONVERT(DATETIME, '15-MAY-2019', 113),
+    5,
+    5,
+    5
+);
+
+INSERT INTO pracownicy VALUES (
+    'Adam',
+    'Drewno',
+    2500,
+    '1221532',
+    '11111111111',
+    'Makowa',
+    '45-210',
+    '1231241235122325',
+    1
+);
+
+INSERT INTO pracownicy VALUES (
+    'Karol',
+    'Karas',
+    2200,
+    '345435',
+    '22222222222',
+    'Bakowa',
+    '45-215',
+    '456456456455474',
+    2
+);
+
+INSERT INTO pracownicy VALUES (
+    'Damian',
+    'Jachas',
+    2300,
+    '3464363',
+    '3333333333',
+    'LDOMOD',
+    '45-213',
+    '3463434643',
+    3
+);
+
+INSERT INTO pracownicy VALUES (
+    'Janusz',
+    'Paleta',
+    2400,
+    '34634634643',
+    '44444444444',
+    'Zielona',
+    '45-212',
+    '67876876876',
+    4
+);
+
+INSERT INTO pracownicy VALUES (
+    'Domino',
+    'Lecina',
+    2500,
+    '34634634643',
+    '555555555',
+    'Dluga',
+    '45-211',
+    '678768678',
+    5
+);
+
+INSERT INTO specjalizacje VALUES (
+    'Hardware',
+    1
+);
+
+INSERT INTO specjalizacje VALUES (
+    'Software',
+    2
+);
+
+INSERT INTO specjalizacje VALUES (
+    'Update',
+    3
+);
+
+INSERT INTO specjalizacje VALUES (
+    'Downgrade',
+    4
+);
+
+INSERT INTO specjalizacje VALUES (
+    'OC',
+    5
+);
+
+INSERT INTO akcesoria_zlecenia VALUES (
+    1,
+    1
+);
+
+INSERT INTO akcesoria_zlecenia VALUES (
+    2,
+    2
+);
+
+INSERT INTO akcesoria_zlecenia VALUES (
+    3,
+    3
+);
+
+INSERT INTO akcesoria_zlecenia VALUES (
+    4,
+    4
+);
+
+INSERT INTO akcesoria_zlecenia VALUES (
+    5,
+    5
+);
+
+INSERT INTO pracownicy_zlecenia VALUES (
+    1,
+    1
+);
+
+INSERT INTO pracownicy_zlecenia VALUES (
+    2,
+    2
+);
+
+INSERT INTO pracownicy_zlecenia VALUES (
+    3,
+    3
+);
+
+INSERT INTO pracownicy_zlecenia VALUES (
+    4,
+    4
+);
+
+INSERT INTO pracownicy_zlecenia VALUES (
+    5,
+    5
+);
+
+INSERT INTO specjalizacje_pracownicy VALUES (
+    1,
+    1
+);
+
+INSERT INTO specjalizacje_pracownicy VALUES (
+    2,
+    2
+);
+
+INSERT INTO specjalizacje_pracownicy VALUES (
+    3,
+    3
+);
+
+INSERT INTO specjalizacje_pracownicy VALUES (
+    4,
+    4
+);
+
+INSERT INTO specjalizacje_pracownicy VALUES (
+    5,
+    5
+);
+
+INSERT INTO uslugi_zlecenia VALUES (
+    1,
+    1
+);
+
+INSERT INTO uslugi_zlecenia VALUES (
+    2,
+    2
+);
+
+INSERT INTO uslugi_zlecenia VALUES (
+    3,
+    3
+);
+
+INSERT INTO uslugi_zlecenia VALUES (
+    4,
+    4
+);
+
+INSERT INTO uslugi_zlecenia VALUES (
+    5,
+    5
+);
+
+-- -------------------------------------------------------------------------------
+-- POLECENIA:   3 X SELECT  ( PRZYK£ADY Z JOIN NA MIN. 3 TABELACH)                                                   
+-- -------------------------------------------------------------------------------
+
+SELECT
+    pracownicy.imie       AS pracownik_imie,
+    pracownicy.nazwisko   AS pracownik_nazwisko,
+    zlecenia.opis,
+    zlecenia.zlecenia_id,
+    pracownicy.pracownicy_id,
+    klienci.nr_telefonu   AS numer_telefonu_klienta,
+    klienci.klienci_id
+FROM
+    pracownicy
+    INNER JOIN pracownicy_zlecenia ON pracownicy_zlecenia.pracownicy_pracownicy_id = pracownicy.pracownicy_id
+    INNER JOIN zlecenia ON pracownicy_zlecenia.zlecenia_zlecenia_id = zlecenia.zlecenia_id
+    INNER JOIN klienci ON klienci.klienci_id = zlecenia.klienci_klienci_id;
+    
+SELECT
+    klienci.imie       AS klient_imie,
+    klienci.nazwisko   AS klient_nazwisko,
+    zlecenia.opis,
+    zlecenia.zlecenia_id,    
+    pracownicy.pracownicy_id,
+    klienci.nr_telefonu   AS numer_telefonu_klienta,
+    klienci.klienci_id
+FROM
+    pracownicy
+    INNER JOIN pracownicy_zlecenia ON pracownicy_zlecenia.pracownicy_pracownicy_id = pracownicy.pracownicy_id
+    INNER JOIN zlecenia ON pracownicy_zlecenia.zlecenia_zlecenia_id = zlecenia.zlecenia_id
+    INNER JOIN klienci ON klienci.klienci_id = zlecenia.klienci_klienci_id
+WHERE zlecenia.opis LIKE '%S10+%';
+
+SELECT
+    akcesoria.nazwa,
+    akcesoria.cena,
+    zlecenia.opis,
+    zlecenia.zlecenia_id,    
+    pracownicy.pracownicy_id,
+    pracownicy.imie AS imie_pracownika,
+    klienci.nr_telefonu   AS numer_telefonu_klienta,
+    klienci.klienci_id
+FROM
+   pracownicy
+    INNER JOIN pracownicy_zlecenia ON pracownicy_zlecenia.pracownicy_pracownicy_id = pracownicy.pracownicy_id
+    INNER JOIN zlecenia ON pracownicy_zlecenia.zlecenia_zlecenia_id = zlecenia.zlecenia_id
+    INNER JOIN klienci ON klienci.klienci_id = zlecenia.klienci_klienci_id
+    INNER JOIN akcesoria_zlecenia ON zlecenia.zlecenia_id=akcesoria_zlecenia.zlecenia_zlecenia_id
+    INNER JOIN akcesoria ON akcesoria_zlecenia.akcesoria_akcesoria_id=akcesoria.akcesoria_id
+WHERE akcesoria.cena > 500;
+
+-- -------------------------------------------------------------------------------
+-- POLECENIA:   3 X UPDATE  DO WSZYSTKICH TABEL                                                    
+-- -------------------------------------------------------------------------------
+
+UPDATE akcesoria SET producent='Zamiennikes' WHERE akcesoria_id=3;
+UPDATE akcesoria SET stan='uzywany' WHERE akcesoria_id=5;
+UPDATE akcesoria SET ilosc_sztuk= 10, stan='odnowiony' WHERE akcesoria_id=2;
+
+UPDATE akcesoria_zlecenia SET akcesoria_akcesoria_id=2 WHERE akcesoria_akcesoria_id=3;
+UPDATE akcesoria_zlecenia SET akcesoria_akcesoria_id=4 WHERE akcesoria_akcesoria_id=5;
+UPDATE akcesoria_zlecenia SET zlecenia_zlecenia_id= 1 WHERE zlecenia_zlecenia_id=2;
+
+UPDATE klienci SET imie='Adam' WHERE klienci_id=3;
+UPDATE klienci SET nr_telefonu='3464363' WHERE klienci_id=5;
+UPDATE klienci SET imie= 'Norbi' WHERE imie LIKE 'Adam';
+
+UPDATE pracownicy SET imie='Olaf' WHERE pracownicy_id=3;
+UPDATE pracownicy SET nr_telefonu='997' WHERE pracownicy_id=5;
+UPDATE pracownicy SET imie='Gerwazy' WHERE imie LIKE 'Adam';
+
+UPDATE pracownicy_zlecenia SET pracownicy_pracownicy_id=2 WHERE pracownicy_pracownicy_id=3;
+UPDATE pracownicy_zlecenia SET pracownicy_pracownicy_id=4 WHERE pracownicy_pracownicy_id=5;
+UPDATE pracownicy_zlecenia SET zlecenia_zlecenia_id= 1 WHERE zlecenia_zlecenia_id=2;
+
+UPDATE specjalizacje SET nazwa='HEHEHEHE' WHERE specjalizacje_id=3;
+UPDATE specjalizacje SET nazwa='CEO' WHERE specjalizacje_id=5;
+UPDATE specjalizacje SET nazwa='Full' WHERE specjalizacje_id=1;
+
+UPDATE specjalizacje_pracownicy SET pracownicy_pracownicy_id=2 WHERE pracownicy_pracownicy_id=3;
+UPDATE specjalizacje_pracownicy SET pracownicy_pracownicy_id=4 WHERE pracownicy_pracownicy_id=5;
+UPDATE specjalizacje_pracownicy SET specjalizacje_specjalizacje_id= 1 WHERE specjalizacje_specjalizacje_id=2;
+
+UPDATE uslugi SET nazwa='FULL' WHERE cena > 1000;
+UPDATE uslugi SET nazwa='Debrand' WHERE uslugi_id=5;
+UPDATE uslugi SET nazwa='Unlock' WHERE uslugi_id=1;
+
+UPDATE uslugi_zlecenia SET uslugi_uslugi_id=5 WHERE uslugi_uslugi_id=1;
+UPDATE uslugi_zlecenia SET zlecenia_zlecenia_id=5 WHERE zlecenia_zlecenia_id=1;
+UPDATE uslugi_zlecenia SET uslugi_uslugi_id=5 WHERE uslugi_uslugi_id=1;
+
+UPDATE zlecenia SET opis='FULL' WHERE zakonczono = 1;
+UPDATE zlecenia SET data_zakonczenia = CONVERT(DATETIME, '20-JAN-2022',113) WHERE zakonczono = 1;
+UPDATE zlecenia SET data_zakonczenia='' WHERE zakonczono = 0;
+
+
+-- -------------------------------------------------------------------------------
+-- POLECENIA:   3 X DELETE  DO WSZYSTKICH TABEL                                                    
+-- -------------------------------------------------------------------------------
+
+DELETE FROM akcesoria_zlecenia WHERE akcesoria_akcesoria_id=2;
+DELETE FROM akcesoria_zlecenia WHERE akcesoria_akcesoria_id=5;
+DELETE FROM akcesoria_zlecenia WHERE akcesoria_akcesoria_id=4;
+
+DELETE FROM pracownicy_zlecenia WHERE pracownicy_pracownicy_id=2;
+DELETE FROM pracownicy_zlecenia WHERE pracownicy_pracownicy_id=5;
+DELETE FROM pracownicy_zlecenia WHERE pracownicy_pracownicy_id=4;
+
+DELETE FROM specjalizacje_pracownicy WHERE pracownicy_pracownicy_id=2;
+DELETE FROM specjalizacje_pracownicy WHERE pracownicy_pracownicy_id=5;
+DELETE FROM specjalizacje_pracownicy WHERE pracownicy_pracownicy_id=4;
+
+DELETE FROM uslugi_zlecenia WHERE uslugi_uslugi_id=2;
+DELETE FROM uslugi_zlecenia WHERE uslugi_uslugi_id=5;
+DELETE FROM uslugi_zlecenia WHERE uslugi_uslugi_id=4;
+
+DELETE FROM zlecenia WHERE zlecenia_id=5;
+DELETE FROM zlecenia WHERE zlecenia_id=2;
+DELETE FROM zlecenia WHERE zlecenia_id=4;
+
+DELETE FROM klienci WHERE klienci_id=2;
+DELETE FROM klienci WHERE klienci_id=5;
+DELETE FROM klienci WHERE klienci_id=4;
+
+DELETE FROM akcesoria WHERE akcesoria_id=2;
+DELETE FROM akcesoria WHERE akcesoria_id=5;
+DELETE FROM akcesoria WHERE akcesoria_id=4;
+
+DELETE FROM specjalizacje WHERE specjalizacje_id=2;
+DELETE FROM specjalizacje WHERE specjalizacje_id=5;
+DELETE FROM specjalizacje WHERE specjalizacje_id=4;
+
+DELETE FROM pracownicy WHERE pracownicy_id=2;
+DELETE FROM pracownicy WHERE pracownicy_id=5;
+DELETE FROM pracownicy WHERE pracownicy_id=4;
+
+DELETE FROM uslugi WHERE uslugi_id=2;
+DELETE FROM uslugi WHERE uslugi_id=5;
+DELETE FROM uslugi WHERE uslugi_id=4;
+
+-- -------------------------------------------------------------------------------
+-- USUWANIE STRUKTURY BAZY DANYCH                                            
+-- -------------------------------------------------------------------------------
+DROP TABLE akcesoria_zlecenia;
+DROP TABLE uslugi_zlecenia;
+DROP TABLE specjalizacje_pracownicy;
+DROP TABLE pracownicy_zlecenia;
+DROP TABLE akcesoria;
+DROP TABLE pracownicy;
+DROP TABLE uslugi;
+DROP TABLE specjalizacje;
+DROP TABLE zlecenia;
+DROP TABLE klienci;
+
+
+
+
+
+
+

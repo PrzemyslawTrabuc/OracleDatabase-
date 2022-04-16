@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="46658A5C-2B01-C04A-E1F8-508DC2BC6D24" name="Fakt_Zlecenia">
+<createdBy>czeme</createdBy>
+<createdTime>2019-03-22 10:30:55 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<engineerTo>
+<item key="8410E721-A164-49ED-7C54-1F9E36466F95" value="true"/>
+</engineerTo>
+<typeID>1</typeID>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Kwota_Robocizny" id="0DC11FF7-D006-5F8C-BB7D-6EAC823E3630">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-22 06:52:37 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<engineerTo>
+<item key="8410E721-A164-49ED-7C54-1F9E36466F95" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Kwota_Czesci" id="EBF4C28D-0CC0-1A3B-BE83-D7C6D57A91E3">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-22 06:55:35 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<engineerTo>
+<item key="8410E721-A164-49ED-7C54-1F9E36466F95" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Ilosc_Godzin" id="DDDE0324-A988-BB14-EDA2-05E1CC9A198E">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-22 06:56:49 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<engineerTo>
+<item key="8410E721-A164-49ED-7C54-1F9E36466F95" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

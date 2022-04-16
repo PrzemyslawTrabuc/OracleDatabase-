@@ -1,0 +1,41 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="KLIENCI" directorySegmentName="seg_0" id="CD8E1DC2-8863-8A78-A4AA-63041D133B2B">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="nr_telefonu" id="00B32B57-096F-3859-9BAC-A695799ECADB">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="imie" id="915F623F-1ABC-7210-81BD-13C8ABF23696">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="KLIENCI_ID" id="9C3E93B0-7D43-75D4-5E77-930356D9B8EF">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="nazwisko" id="A7329AEC-D92F-B4E5-B445-DDA464C3F692">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="KLIENCI_PK" id="767FD1C8-424C-7C21-AE0E-D03E3685569F">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

@@ -1,0 +1,36 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="USLUGI" directorySegmentName="seg_0" id="FC19FB86-19FC-0492-CF5C-88A5A468ED2D">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="USLUGI_ID" id="66A3B57C-09AC-F2E5-7CC7-CA450CE7BC7A">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="nazwa" id="95A4C99A-7CDF-CECA-0C3B-D4BA0B3A8561">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="cena" id="D619CA76-B757-A760-7920-EB2E062BD935">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="USLUGI_PK" id="A73C177D-D484-C368-3C62-F6EBEB48BE9B">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

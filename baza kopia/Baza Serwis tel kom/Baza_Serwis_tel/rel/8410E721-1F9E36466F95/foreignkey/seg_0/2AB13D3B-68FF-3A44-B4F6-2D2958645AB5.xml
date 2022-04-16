@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2AB13D3B-68FF-3A44-B4F6-2D2958645AB5" containerWithKeyObject="973084C8-35D9-B36A-69DA-A32F7951F1EC" localFKIndex="D04AC88D-5CEA-904E-F667-3C4A24726DB1" name="prac-zlec_ZLECENIA_FK">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>399A74B4-4C41-6CE6-C433-D1EBA2799C5B</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<referredTableLongName>ZLECENIA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>EEC43833-D2D9-3AE7-A81A-A8955BA5B9C0</referredTableID>
+<keyObject>B758398C-467E-D31E-63E7-10929BF33739</keyObject>
+<referredKeyID>B758398C-467E-D31E-63E7-10929BF33739</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ZLECENIA_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

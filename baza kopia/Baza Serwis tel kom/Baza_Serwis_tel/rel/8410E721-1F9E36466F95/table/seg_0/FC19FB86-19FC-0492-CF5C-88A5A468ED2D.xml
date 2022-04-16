@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FC19FB86-19FC-0492-CF5C-88A5A468ED2D" name="USLUGI">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>0C893217-31B5-CFFE-C5D0-D4E4D1205A23</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<typeID>2</typeID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nazwa" id="95A4C99A-7CDF-CECA-0C3B-D4BA0B3A8561">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>D700AF15-D324-848B-0000-AEA5602070F4</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cena" id="D619CA76-B757-A760-7920-EB2E062BD935">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>5931E44B-8387-285B-E5B3-0FE9FBA2C66C</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USLUGI_ID" id="66A3B57C-09AC-F2E5-7CC7-CA450CE7BC7A">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A73C177D-D484-C368-3C62-F6EBEB48BE9B" name="USLUGI_PK">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="66A3B57C-09AC-F2E5-7CC7-CA450CE7BC7A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

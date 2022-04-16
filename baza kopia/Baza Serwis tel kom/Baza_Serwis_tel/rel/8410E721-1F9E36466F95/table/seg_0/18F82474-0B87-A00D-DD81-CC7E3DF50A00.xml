@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="18F82474-0B87-A00D-DD81-CC7E3DF50A00" name="akcesoria-zlecenia">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<ordsAlias>relation_5</ordsAlias>
+<typeID>2</typeID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="AKCESORIA_AKCESORIA_ID" id="C2537F9E-BAE7-E929-9304-02BCDDB1A7AB">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="107F227B-7FF4-60C7-1FC9-E41449C435A4" referredColumn="DFB0CDC7-1C92-2894-63CF-366EF04D3A24"/>
+</associations>
+</Column>
+<Column name="ZLECENIA_ZLECENIA_ID" id="8ED212D7-44F9-01C4-4626-2FC53911D5DC">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A665467F-93D3-4065-BC31-F0BFFA3F4A20" referredColumn="09438022-3D29-75E8-F29D-C258BE868B25"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2549AA8F-F248-8C25-35D9-A9BE34C10C8E" name="akc-zlec_AKCESORIA_FK">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>F1064EF0-2E3E-6D85-7473-91041C992AF4</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C2537F9E-BAE7-E929-9304-02BCDDB1A7AB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1779E145-FA69-CDB0-B640-8A916EC9CDC8" name="akc-zlec_ZLECENIA_FK">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>F1064EF0-2E3E-6D85-7473-91041C992AF4</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8ED212D7-44F9-01C4-4626-2FC53911D5DC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

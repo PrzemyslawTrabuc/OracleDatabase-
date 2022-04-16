@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="pracownicy-zlecenia" directorySegmentName="seg_0" id="973084C8-35D9-B36A-69DA-A32F7951F1EC">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="PRACOWNICY_PRACOWNICY_ID" id="4F7F8FD3-5BBB-44D5-B581-EF8314A08912">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ZLECENIA_ZLECENIA_ID" id="8FB28BC7-5EDB-6A20-62C3-7C05079ACCC3">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="prac-zlec_PRACOWNICY_FK" id="3F53F042-E3DF-03FE-8172-50EAB10B04C8">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="prac-zlec_ZLECENIA_FK" id="D04AC88D-5CEA-904E-F667-3C4A24726DB1">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+</TableProxyOraclev20c>

@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F5AE838E-8607-7CA9-832A-F4141358CE80" name="uslugi-zlecenia">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<ordsAlias>relation_6</ordsAlias>
+<typeID>2</typeID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="USLUGI_USLUGI_ID" id="2467F787-A79D-5238-49E8-DAFE286A1076">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BAB43C53-1907-EB03-0A12-C9410A66B6A4" referredColumn="66A3B57C-09AC-F2E5-7CC7-CA450CE7BC7A"/>
+</associations>
+</Column>
+<Column name="ZLECENIA_ZLECENIA_ID" id="01E3621A-A680-9225-A860-FA17390CC518">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="690D96C0-5E52-2452-5469-3420D27AD316" referredColumn="09438022-3D29-75E8-F29D-C258BE868B25"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BAE9F2A3-D4A4-5AD4-AE2C-343C4BFF913E" name="uslugi-zlecenia_USLUGI_FK">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>43412153-3016-0939-0E5C-64D3D9D1E0BF</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2467F787-A79D-5238-49E8-DAFE286A1076"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F0CE0AEB-AFA5-6E3A-999E-699D5CAF430C" name="uslugi-zlecenia_ZLECENIA_FK">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>43412153-3016-0939-0E5C-64D3D9D1E0BF</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="01E3621A-A680-9225-A860-FA17390CC518"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

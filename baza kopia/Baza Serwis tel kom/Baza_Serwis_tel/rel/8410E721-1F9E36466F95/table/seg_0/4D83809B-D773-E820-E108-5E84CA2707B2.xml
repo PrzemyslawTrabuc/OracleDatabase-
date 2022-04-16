@@ -1,0 +1,153 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4D83809B-D773-E820-E108-5E84CA2707B2" name="AKCESORIA">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>3F9B0392-9DB7-AF7A-D5C0-FA9869400385</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<typeID>2</typeID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nazwa" id="7BDCA126-0FF4-21B1-9820-8189FBD6165B">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>A68612F9-7AF2-0B98-A1E4-09DF9E82031C</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="producent" id="42023E08-D615-0CC6-FA53-5D56B08D9DD7">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>E60243B7-A725-8E9C-3390-46E6AA945420</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="marka_docelowa" id="1739F0D9-C142-A36C-D983-26BE05F049DF">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>E8DED183-7A50-11BF-855B-67081416892C</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cena" id="2C18A624-66FD-98BB-B121-F4C55C8B3B75">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>8E22FECD-5EA0-958A-F226-AEE66E8682C6</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="stan" id="8434AFC3-F31E-0753-18EE-061640780707">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>CF36778A-D69E-06B0-84EA-18C2EF4CCD5B</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ilosc_sztuk" id="FCD05F8F-04AA-9000-B442-F5A4D577FC8E">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>A1C0A68B-6AF0-3EFD-9B32-F0925D9EE6D6</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="opis" id="049EE3C9-8F1F-338A-8827-01772D650C87">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>C781ECF9-AB96-B0C6-574A-E16894247CF8</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300 CHAR</dataTypeSize>
+<ownDataTypeParameters>300 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AKCESORIA_ID" id="DFB0CDC7-1C92-2894-63CF-366EF04D3A24">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="AKCESORIA_KAT_ID" id="D4301EC9-D876-3450-C8B9-B5A05098419A">
+<createdBy>czeme</createdBy>
+<createdTime>2021-03-08 10:55:39 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="94A8B940-7517-F091-1D9D-AD40C089FF9F" referredColumn="C0F20C1C-1572-23F1-9A58-7510C0EE56F2"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A01234ED-0C78-086D-E937-82B914726CE0" name="AKCESORIA_PK">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="DFB0CDC7-1C92-2894-63CF-366EF04D3A24"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2BAA92E6-73C0-0FF8-BF36-EF8D5B9DBAC3" name="AKCESORIA_KATEGORIA_AKCESORIUM_FK">
+<createdBy>czeme</createdBy>
+<createdTime>2021-03-08 10:53:40 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D4301EC9-D876-3450-C8B9-B5A05098419A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

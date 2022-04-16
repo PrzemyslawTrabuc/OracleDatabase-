@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="B44ECDBB-2C32-CF5F-12A6-D4D05247FA65">
+<createdBy>czeme</createdBy>
+<createdTime>2019-03-22 10:30:16 UTC</createdTime>
+<ownerDesignName>Projekt Baza Serwis tel kom</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

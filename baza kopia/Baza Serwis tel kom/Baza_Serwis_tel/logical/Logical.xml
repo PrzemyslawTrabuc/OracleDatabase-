@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="945F2116-15E6-AE61-2259-38EB30CE0D1E" mainViewID="1C1D6F3E-199F-CB11-DFF5-B1B5BA7CFD48">
+<createdBy>czeme</createdBy>
+<createdTime>2019-03-22 10:30:16 UTC</createdTime>
+<ownerDesignName>Projekt Baza Serwis tel kom</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

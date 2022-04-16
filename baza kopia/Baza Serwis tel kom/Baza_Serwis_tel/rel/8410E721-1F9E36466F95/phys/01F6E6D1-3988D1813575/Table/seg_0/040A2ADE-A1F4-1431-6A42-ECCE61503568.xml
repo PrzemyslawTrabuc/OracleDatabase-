@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="SPECJALIZACJE" directorySegmentName="seg_0" id="040A2ADE-A1F4-1431-6A42-ECCE61503568">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="nazwa" id="18BE7964-ACC0-D473-670A-8005B25225F3">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Specjalizacje_ID" id="6EC4482C-EA1D-A8EF-3E31-E5B014DED8C9">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Specjalizacje_PK" id="F324A706-C298-C0BF-188B-CAC50FF59AF0">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-15 07:23:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

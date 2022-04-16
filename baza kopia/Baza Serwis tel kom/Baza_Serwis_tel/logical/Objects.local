@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="46658A5C-2B01-C04A-E1F8-508DC2BC6D24" name="Fakt_Zlecenia" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="945F2116-15E6-AE61-2259-38EB30CE0D1E" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="3F9B0392-9DB7-AF7A-D5C0-FA9869400385" name="Wymiar_Akcesorium" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="945F2116-15E6-AE61-2259-38EB30CE0D1E" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="F431A0FD-6435-D2DF-AFE3-F58BA1C64F1E" name="Wymiar_Czasu" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="945F2116-15E6-AE61-2259-38EB30CE0D1E" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="41B5B61D-3526-C485-5B66-5ECC21196C3D" name="Wymiar_Klienta" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="945F2116-15E6-AE61-2259-38EB30CE0D1E" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="7BFDFDBC-25FA-8F17-88C6-ECE1FCB4D1DD" name="Wymiar_Pracownika" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="945F2116-15E6-AE61-2259-38EB30CE0D1E" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="0C893217-31B5-CFFE-C5D0-D4E4D1205A23" name="Wymiar_Uslugi" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="945F2116-15E6-AE61-2259-38EB30CE0D1E" propertySourceId="" propertyTargetId=""/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>

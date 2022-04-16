@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EEC43833-D2D9-3AE7-A81A-A8955BA5B9C0" name="ZLECENIA">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>46658A5C-2B01-C04A-E1F8-508DC2BC6D24</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<typeID>1</typeID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="opis" id="7A33263D-087F-B9E0-1109-F018E0CB68CD">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>FD807EBD-83DB-45A0-7587-3FCB13D0B957</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300 CHAR</dataTypeSize>
+<ownDataTypeParameters>300 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_przyjecia" id="FA1E6A62-8478-47AD-3F92-E61506349E16">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>7E79AB11-973F-AD31-3D47-C59F28287F04</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_zakonczenia" id="4425ECC1-EDBF-5A77-71CB-55FC33AF5B4B">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>6DCF51AB-20DB-D786-E75F-A396747B0C9D</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="zakonczono" id="D43877D9-1446-28DA-0DE8-89BB0C91B294">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>64FFB034-AED8-78D0-2BFF-A938B4D434F6</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ZLECENIA_ID" id="09438022-3D29-75E8-F29D-C258BE868B25">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="KLIENCI_KLIENCI_ID" id="CA877ACF-50C1-CF80-BC2C-E97AAE54896B">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="824EF95D-7A99-B073-CEAF-754BFE7F3092" referredColumn="9C3E93B0-7D43-75D4-5E77-930356D9B8EF"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B758398C-467E-D31E-63E7-10929BF33739" name="ZLECENIA_PK">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="09438022-3D29-75E8-F29D-C258BE868B25"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="726BDC75-C3EE-2AB8-303C-D41F1F11E27F" name="ZLECENIA_KLIENCI_FK">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>1ABA57D3-0FDF-44C1-86A0-167BA083E561</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CA877ACF-50C1-CF80-BC2C-E97AAE54896B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

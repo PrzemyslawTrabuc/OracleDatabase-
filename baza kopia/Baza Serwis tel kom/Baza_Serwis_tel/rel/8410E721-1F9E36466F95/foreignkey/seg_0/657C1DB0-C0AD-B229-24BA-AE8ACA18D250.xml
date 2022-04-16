@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="657C1DB0-C0AD-B229-24BA-AE8ACA18D250" containerWithKeyObject="68A52C03-327B-2AA5-B667-3F84F002EAC6" localFKIndex="679CE514-AB15-636D-2F5D-E8A93829C688" name="spec-prac_PRACOWNICY_FK">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>C697447F-B14A-0A97-217D-4883C51F29B3</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<referredTableLongName>PRACOWNICY</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>5315C77C-1F7B-9CE3-EE06-2C2D83301989</referredTableID>
+<keyObject>AB88C89C-5167-5EFA-63A7-E914B8313D5D</keyObject>
+<referredKeyID>AB88C89C-5167-5EFA-63A7-E914B8313D5D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>PRACOWNICY_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

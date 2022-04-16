@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F431A0FD-6435-D2DF-AFE3-F58BA1C64F1E" name="Wymiar_Czasu">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-22 06:57:02 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<engineerTo>
+<item key="8410E721-A164-49ED-7C54-1F9E36466F95" value="true"/>
+</engineerTo>
+<typeID>2</typeID>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Rok" id="61230B07-0862-2882-2F53-878A3F0060CB">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-22 06:57:25 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<engineerTo>
+<item key="8410E721-A164-49ED-7C54-1F9E36466F95" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Miesiac" id="708EFC25-0266-DFA4-E9FA-FA7B27D5563D">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-22 06:58:23 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<engineerTo>
+<item key="8410E721-A164-49ED-7C54-1F9E36466F95" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Dzien" id="17EE9873-3ABA-F2BB-EB8B-CDE51C3B2F37">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-22 06:58:37 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<engineerTo>
+<item key="8410E721-A164-49ED-7C54-1F9E36466F95" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Godzina" id="08946310-E05B-7EE5-93CF-B068775003D9">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-22 06:58:42 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<engineerTo>
+<item key="8410E721-A164-49ED-7C54-1F9E36466F95" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Minuta" id="18B77C9E-3F9B-8A42-9627-9C82980A182A">
+<createdBy>czeme</createdBy>
+<createdTime>2021-04-22 06:58:48 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<engineerTo>
+<item key="8410E721-A164-49ED-7C54-1F9E36466F95" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

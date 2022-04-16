@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Baza_Serwis_tel" id="16D822F0-3904-3548-AAC8-97DCCEA1AA4B" version="3.5">
+<createdBy>czeme</createdBy>
+<createdTime>2019-03-22 10:30:16 UTC</createdTime>
+<ownerDesignName>Projekt Baza Serwis tel kom</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>16D822F0-3904-3548-AAC8-97DCCEA1AA4B</designId>
+</OSDM_Design>

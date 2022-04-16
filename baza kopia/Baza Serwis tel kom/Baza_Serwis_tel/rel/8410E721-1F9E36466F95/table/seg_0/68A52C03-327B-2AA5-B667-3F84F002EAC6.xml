@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="68A52C03-327B-2AA5-B667-3F84F002EAC6" name="specjalizacje-pracownicy">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<ordsAlias>relation_9</ordsAlias>
+<typeID>2</typeID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Specjalizacje_Specjalizacje_ID" id="B9CFCA0A-7005-9702-B649-FF9B27ADF093">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B4CB6B3C-55CD-F361-A585-30D31174B3BC" referredColumn="6EC4482C-EA1D-A8EF-3E31-E5B014DED8C9"/>
+</associations>
+</Column>
+<Column name="PRACOWNICY_PRACOWNICY_ID" id="F158C347-0CD0-00CC-7DE8-DB0E46895AEF">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="657C1DB0-C0AD-B229-24BA-AE8ACA18D250" referredColumn="760D5EED-5E7A-D6A7-006E-745CD69C9DFA"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="13F8DE5A-40F5-A8AC-1392-8569A8ADE2C5" name="spec-prac_Specjalizacje_FK">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>C697447F-B14A-0A97-217D-4883C51F29B3</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B9CFCA0A-7005-9702-B649-FF9B27ADF093"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="679CE514-AB15-636D-2F5D-E8A93829C688" name="spec-prac_PRACOWNICY_FK">
+<createdBy>czeme</createdBy>
+<createdTime>2019-04-01 19:47:02 UTC</createdTime>
+<generatorID>C697447F-B14A-0A97-217D-4883C51F29B3</generatorID>
+<ownerDesignName>Baza_Serwis_tel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F158C347-0CD0-00CC-7DE8-DB0E46895AEF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
